@@ -26,7 +26,7 @@ class MoviesController < ApplicationController
 
 	def update
 		movie = Movie.find(params[:id])
-		if movie.update(actor_params)
+		if movie.update(movie_params)
 			redirect_to "/movies"
 		else
 			flash[:errors] = movie.errors.full_messages
